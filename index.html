@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaperRoom</title>   
+<link href="./output.css" rel="stylesheet" type="text/css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://kit.fontawesome.com/e70ea989f6.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-garet bg-[#f2f3f1]">
+
+<!-- NAVBAR -->
+<header class="shadow font-garet bg-[#f2f3f1]">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+<div class="flex items-center ">
+<img class="w-20 h-20 rounded-full" src="./img/paper-room-stikerce.jpeg"/>
+<div>
+    <h1 class="text-[20px] text-[#3b3b3b] font-font">PAPER ROOM</h1>
+    <h1 class="text-[10px] text-[#3b3b3b] font-garet">Печатница и дизајн студио</h1>
+</div>
+</div>
+
+
+<!-- Hamburger -->
+<button id="menu-btn" class="text-2xl md:hidden pr-6 text-gray-600">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- Desktop Menu -->
+<nav class="space-x-9 text-[17px] hidden md:block">
+<a class="font-semibold text-[#c793ab]" href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани</a>
+<a href="cards.html">Картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html" class="text-[#c793ab]">
+Кошничка (<span id="cart-count">0</span>)
+</a>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu"
+class="fixed inset-0 bg-[#ba7f9c] text-white flex flex-col p-12 text-3xl space-y-8 z-50
+transform -translate-y-full transition-transform duration-500 ease-in-out">
+
+<button id="close-menu" class="absolute top-6 right-6 text-2xl">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+<a href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани</a>
+<a href="cards.html">Картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html">Кошничка</a>
+
+</div>
+
+
+</div>
+</header>
+
+<!-- HERO -->
+<section class="relative bg-cover bg-center h-[70vh] flex items-center justify-center text-center"
+style="background-image:url('https://images.unsplash.com/photo-1519682337058-a94d519337bc');">
+
+<div class="bg-black/40 absolute inset-0"></div>
+
+<div class="relative text-white px-6">
+
+<h2 class="text-4xl font-garet md:text-5xl mb-4">
+✨ Следете ја нашата приказна.
+</h2>
+
+<p class="mb-6 text-lg">
+Хартија за пакување, свадбени покани и креативни картички.
+</p>
+
+<button class="bg-[#c793ab] hover:bg-[#9c6d83] px-6 py-3 rounded-lg">
+Истражи ги дизајните
+</button>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-20 max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-7 md:mb-14">
+<h2 class="text-3xl text-[#9c6d83]">НАШИ УСЛУГИ</h2>
+<p class="mt-2 text-black">Персонализирани хартиени дизајни создадени за вашите посебни моменти</p>
+</div>
+
+<div class="flex md:flex-row flex-col space-y-8 md:space-x-6">
+
+<div class="transition flex flex-col-reverse md:flex-col items-center space-y-5">
+<div class="w-[80%] rounded-xl">
+<a href="./wrapping.html"><img class="pt-3 md:pt-0 rounded-xl hover:shadow-2xl delay-100 hover:cursor-pointer hover:scale-105 duration-150" src="./img/IMG_1737.jpg"/></a>
+</div>
+<div class="text-center">
+<h3 class="text-xl text-[#9c6d83] font-semibold md:mb-3">Хартија за пакување</h3>
+<p>Уникатни дизајни на хартија за пакувањe.</p>
+</div>
+</div>
+
+<div class="transition flex flex-col-reverse md:flex-col items-center space-y-5">
+<div class="w-[80%] rounded-xl">
+<a href="./wrapping.html"><img class=" pt-3 md:pt-0 rounded-xl hover:shadow-2xl delay-100 hover:cursor-pointer hover:scale-105 duration-150" src="./img/IMG_1758.jpg"/></a>
+</div>
+<div class="text-center">
+<h3 class="text-xl text-[#9c6d83] font-semibold md:mb-3">Персонализирани покани</h3>
+<p>Покани за свадби, родендени и прослави дизајнирани специјално за вас.</p>
+</div>
+</div>
+
+<div class="transition flex flex-col-reverse md:flex-col items-center space-y-5">
+<div class="w-[80%] rounded-xl">
+<a href="./wrapping.html"><img class="pt-3 md:pt-0 rounded-xl hover:shadow-2xl delay-100 hover:cursor-pointer hover:scale-105 duration-150" src="./img/IMG_1772.jpg"/></a>
+</div>
+<div class="text-center">
+<h3 class="text-xl text-[#9c6d83] font-semibold md:mb-3">Картички</h3>
+<p>Честитки, благодарници и картички за прослави испечатени со прекрасни дизајни.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="bg-white py-20">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-14">
+<h2 class="text-3xl">ИЗБРАНИ ДИЗАЈНИ</h2>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="rounded-xl overflow-hidden shadow">
+<img src="./img/IMG_1765.jpg" class="h-72 w-full ">
+<div class="p-4">
+<h4 class="text-center text-blue-800">Покани со сини детали</h4>
+</div>
+</div>
+
+<div class="rounded-xl overflow-hidden shadow">
+<img src="./img/IMG_1771.jpg" class="h-72 w-full object-cover">
+<div class="p-4">
+<h4 class=" text-center text-red-800">Покани со црвен восок</h4>
+</div>
+</div>
+
+<div class="rounded-xl overflow-hidden shadow">
+<img src="./img/IMG_1769.jpg" class="h-72 w-full object-cover">
+<div class="p-4">
+<h4 class=" text-center text-green-900">Зелени магични покани</h4>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-20 max-w-7xl mx-auto px-6">
+
+<div class="grid md:grid-cols-2 gap-10 items-center">
+
+<img src="https://images.unsplash.com/photo-1484704849700-f032a568e944"
+class="rounded-xl shadow">
+
+<div>
+
+<h2 class="text-3xl text-pink-500 mb-4">За PaperRoom</h2>
+
+<p class="mb-4">
+PaperRoom е креативно студио фокусирано на прекрасен хартиен дизајн.
+Создаваме висококвалитетна хартија за пакување, персонализирани покани
+за свадби и прослави, и уникатни картички за секоја пригода.
+</p>
+
+<p>
+Нашата цел е секој подарок, прослава и настан да се чувствува посебно преку внимателен дизајн.
+</p>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="bg-pink-500 text-white py-16 text-center">
+
+<h2 class="text-3xl mb-4">Ајде да создадеме нешто прекрасно</h2>
+
+<p class="mb-6">
+Контактирајте нè за персонализирани покани, картички и дизајни за хартија за пакување.
+</p>
+
+<button class="bg-white text-pink-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+Контактирај нè
+</button>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 text-center py-6">
+<p>© 2026 PaperRoom. Сите права се задржани.</p>
+</footer>
+
+
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-menu");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuBtn.addEventListener("click", () => {
+mobileMenu.classList.remove("-translate-y-full");
+mobileMenu.classList.add("translate-y-0");
+});
+
+closeBtn.addEventListener("click", () => {
+mobileMenu.classList.remove("translate-y-0");
+mobileMenu.classList.add("-translate-y-full");
+});
+
+</script>
+
+
+</body>
+</html>

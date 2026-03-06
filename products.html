@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/e70ea989f6.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class=" font-font">
+        <div class="flex px-5 bg-[#f2f3f1] shadow-md justify-between items-center ">
+            <div class="flex items-center">
+                <img class="w-20 h-20 rounded-full" src="./img/paper-room-stikerce.jpeg"/>
+                <h1 class="font-font">PAPER ROOM</h1>
+            </div>
+            <div class="flex space-x-6">
+                <a href="./index.html" class="text-gray-800 font-font">Home</a>
+                <a href="./products.html" class="text-gray-800 font-font">Products</a>
+                <a href="#" class="text-gray-800 font-font">Wish List</a>
+                <a href="#" class="text-gray-800 font-font">Shopping Cart</a>
+            </div>
+            <div>
+                <p>Log In <i class="text-gray-500 fa-solid fa-user"></i></p>
+                
+            </div>
+        </div>
+<div id="prvred" class="md:flex mt-20 md:flex-row flex items-center flex-col md:justify-center md:space-x-6">
+
+    <!-- PRODUCT 1 -->
+    <div class="flex flex-col items-center md:w-1/4 w-4/5 pb-7">
+        <img src="./img/IMG_1736.jpg" class="rounded-md"/>
+        <div class="bg-white shadow-md py-4 bg-opacity-85 rounded-md w-4/5 -mt-20 flex flex-col items-center space-y-4">
+            <h1 class="px-4">HandWriting</h1>
+            <p class="px-4">Lorem adipisicing elit. Ipsum, in ad. Dicta?</p>
+            <form action="cart.php" method="POST">
+                <input type="hidden" name="name" value="HandWriting">
+                <input type="hidden" name="price" value="300">
+                <button type="submit" class="text-blue-600 hover:underline">Add to shop</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="flex flex-col items-center md:w-1/4 w-4/5 pb-7">
+        <img src="./img/IMG_1738.jpg" class="rounded-md"/>
+        <div class="bg-white shadow-md py-4 bg-opacity-85 rounded-md w-4/5 -mt-20 flex flex-col items-center space-y-4">
+            <h1 class="px-4">Golden Hearts</h1>
+            <p class="px-4">Lorem adipisicing elit. Ipsum, in ad. Dicta?</p>
+            <form action="cart.php" method="POST">
+                <input type="hidden" name="name" value="Golden Hearts">
+                <input type="hidden" name="price" value="250">
+                <button type="submit" class="text-blue-600 hover:underline">Add to shop</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="flex flex-col items-center md:w-1/4 w-4/5 pb-7">
+        <img src="./img/IMG_1737.jpg" class="rounded-md"/>
+        <div class="bg-white shadow-md py-4 bg-opacity-85 rounded-md w-4/5 -mt-20 flex flex-col items-center space-y-4">
+            <h1 class="px-4">Pink Lines</h1>
+            <p class="px-4">Lorem adipisicing elit. Ipsum, in ad. Dicta?</p>
+            <form action="cart.php" method="POST">
+                <input type="hidden" name="name" value="Pink Lines">
+                <input type="hidden" name="price" value="280">
+                <button type="submit" class="text-blue-600 hover:underline">Add to shop</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+</body>
+</html>

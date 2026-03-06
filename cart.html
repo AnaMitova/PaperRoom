@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wrapping Paper</title>
+<link href="./output.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e70ea989f6.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="cart.js"></script>
+
+</head>
+
+<body class="bg-gray-50">
+
+<!-- NAVBAR -->
+<header class=" shadow font-garet bg-[#f2f3f1]">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+<div class="flex items-center ">
+<img class="w-20 h-20 rounded-full" src="./img/paper-room-stikerce.jpeg"/>
+<div>
+    <h1 class="text-[20px] text-[#3b3b3b] font-font">PAPER ROOM</h1>
+    <h1 class="text-[10px] text-[#3b3b3b] font-garet">Печатница и дизајн студио</h1>
+</div>
+</div>
+<!-- Hamburger -->
+<button id="menu-btn" class="text-2xl md:hidden pr-6 text-gray-600">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- Desktop Menu -->
+<nav class="space-x-9 text-[17px] hidden md:block">
+<a class="font-semibold text-[#c793ab]" href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани</a>
+<a href="cards.html">Картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html" class="text-[#c793ab]">
+Кошничка (<span id="cart-count">0</span>)
+</a>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu"
+class="fixed inset-0 bg-[#ba7f9c] text-white flex flex-col p-12 text-3xl space-y-8 z-50
+transform -translate-y-full transition-transform duration-500 ease-in-out">
+
+<button id="close-menu" class="absolute top-6 right-6 text-2xl">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+<a href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани</a>
+<a href="cards.html">Картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html">Кошничка</a>
+
+</div>
+
+</div>
+</header>
+
+<section class="max-w-4xl mx-auto md:py-16 md:p-0 p-7">
+
+<h2 class="text-3xl mb-8">Кошничка</h2>
+
+<div id="cart-items"></div>
+
+<h3 class="text-xl font-bold mt-6">
+Вкупно: <span id="cart-total"></span> ден.
+</h3>
+
+
+
+</section>
+
+<script>
+displayCart()
+</script>
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-menu");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuBtn.addEventListener("click", () => {
+mobileMenu.classList.remove("-translate-y-full");
+mobileMenu.classList.add("translate-y-0");
+});
+
+closeBtn.addEventListener("click", () => {
+mobileMenu.classList.remove("translate-y-0");
+mobileMenu.classList.add("-translate-y-full");
+});
+
+</script>
+</body>
+</html>
