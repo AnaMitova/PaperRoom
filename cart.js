@@ -9,16 +9,21 @@ function saveCart(cart) {
     updateCartCount();
 }
 
-// Add item to cart
-function addToCart(name, price) {
+function addToCart(name, price, messageElement = null) {
     let cart = getCart();
-
-    // Ensure price is a number
     price = Number(price);
 
     cart.push({ name, price });
-
     saveCart(cart);
+
+    if (messageElement) {
+        messageElement.textContent = `Додадено!`;
+        messageElement.classList.remove("hidden");
+
+        setTimeout(() => {
+            messageElement.classList.add("hidden");
+        }, 2000);
+    }
 }
 
 // Update cart count in navbar

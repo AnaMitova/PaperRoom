@@ -28,29 +28,26 @@ rows.forEach(row => {
 const [id,name,category,price,length,image] = row.split(",").map(v => v.trim())
 
 const product = `
-<div class="relative rounded-xl hover:cursor-pointer hover:scale-110 duration-150 overflow-hidden shadow-lg group">
-
-<img 
-src="${image}"
-onclick="openModal('${image}','${name}','${price}','${length}')"
-class="w-full h-80 object-cover  transition duration-500 cursor-pointer"
-/>
-
-<div class="absolute bottom-0 p-6 text-white flex flex-col -space-y-1">
-
-<p class="text-[12px] opacity-90">Димензии: ${length}</p>
-<p class="text-[19px] font-semibold ">${price}ден.</p>
-<h3 class="text-lg font-semibold pb-2">${name}</h3>
-
-<button onclick="addToCart('${name}',${price})"
-class="bg-[#c793ab] px-3 w-[100px] py-1 rounded hover:bg-[#b77f97] transition">
-Додади
-</button>
-
+<div class="relative rounded-xl hover:cursor-pointer md:hover:scale-110 duration-150 overflow-hidden shadow-lg group">
+    <img 
+        src="${image}"
+        onclick="openModal('${image}','${name}','${price}','${length}')"
+        class="w-full h-80 object-cover transition duration-500 cursor-pointer"
+    />
+    <div class="absolute bottom-0 p-6 text-white flex flex-col -space-y-1">
+        <p class="text-[12px] opacity-90">Димензии: ${length}</p>
+        <p class="text-[19px] font-semibold ">${price}ден.</p>
+        <h3 class="text-lg font-semibold pb-2">${name}</h3>
+        <button 
+            onclick="addToCart('${name}', ${price}, this.nextElementSibling)"
+            class="bg-[#c793ab] px-3 w-[100px] py-1 rounded hover:bg-[#b77f97] transition"
+        >
+            Додади
+        </button>
+        <p id="cart-message" class="bg-white text-[#c793ab] p-1 w-[110px] rounded-sm font-semibold text-sm mt-2 hidden"></p>
+    </div>
 </div>
-</div>
-`
-
+`;
 container.innerHTML += product
 
 })
@@ -134,11 +131,18 @@ function openModal(src, name, price, length) {
     const modalName = document.getElementById("modalName");
     const modalPrice = document.getElementById("modalPrice");
     const modalLength = document.getElementById("modalLength");
+    const addButton = modal.querySelector("button"); 
+    const message = modal.querySelector("#cart-message"); // select modal message
 
     modalImg.src = src;
     modalName.textContent = name;
     modalPrice.textContent = price + " ден.";
     modalLength.textContent = length;
+
+    // dynamically set the onclick with proper values and message element
+    addButton.onclick = function() {
+        addToCart(name, price, message);
+    };
 
     modal.classList.remove("hidden");
 }
@@ -160,25 +164,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <!-- IMAGE MODAL -->
-<div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+<div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex md:flex-row flex-col items-center justify-center z-50">
 
-<div class="bg-white -mr-8 rounded-xl flex overflow-hidden shadow-2xl">
+<div class="bg-white mx-2 md:mx-0 md:-mr-8 rounded-xl flex overflow-hidden shadow-2xl">
 
-<img id="modalImg" class="w-[780px]  object-cover"/>
+<img id="modalImg" class="w-full  md:w-[780px] md:object-cover"/>
 
 </div>
 
-<div class="p-4 flex flex-col justify-center  w-52 -ml-28 -mt-72 bg-white rounded-xl">
+<div class="p-3 md:p-4 flex flex-col justify-center w-[80%] -mt-9 md:w-52 md:-ml-28 md:-mt-72 bg-white rounded-xl">
 
-<h3 id="modalName" class="text-lg  text-gray-800"></h3>
-<h3 id="modalLength" class="text-sm  text-gray-800"></h3>
+<h3 id="modalName" class="text-[15px] md:text-lg  text-gray-800"></h3>
+<h3 id="modalLength" class="text-[12px] md:text-sm  text-gray-800"></h3>
 
-<p id="modalPrice" class="text-xl pt-2 text-[#c793ab] font-semibold"></p>
+<p id="modalPrice" class="text-base md:text-xl pt-2 text-[#c793ab] font-semibold"></p>
 
 <button onclick="addToCart('${name}','${price}')"
-class="bg-[#c793ab] px-3 w-[100px] py-1 rounded text-white self-end mt-2 hover:bg-[#b77f97] transition">
+class="bg-[#c793ab] px-2 md:px-3 w-[100px] py-0 md:py-1 rounded text-white self-end -mt-4 md:mt-2 hover:bg-[#b77f97] transition">
 Додади
 </button>
+<p id="cart-message" class="text-[#c793ab] font-semibold self-end text-sm mt-2 hidden">Додадено!</p>
 
 
 </div>
