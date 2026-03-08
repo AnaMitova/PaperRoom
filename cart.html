@@ -110,6 +110,22 @@ class="border p-2 w-full"/>
 <input id="address" placeholder="Адреса"
 class="border p-2 w-full"/>
 
+
+<!-- PAYMENT -->
+<div class="space-y-2 mt-4">
+<p class="font-semibold text-[#424b54]">Начин на плаќање</p>
+
+<label class="flex items-center space-x-2">
+<input type="radio" name="payment" value="cash" checked>
+<span>Плаќање при достава</span>
+</label>
+
+<label class="flex items-center space-x-2">
+<input type="radio" name="payment" value="card">
+<span>Онлајн плаќање (картичка)</span>
+</label>
+</div>
+
 <div class="flex space-x-2">
 <button onclick="sendOrder()"
 class="bg-[#ba7f9c] text-white px-6 py-3 rounded">
@@ -147,12 +163,13 @@ mobileMenu.classList.add("-translate-y-full");
 
 </script>
 <script>
-
 function sendOrder(){
 
 let name = document.getElementById("name").value.trim()
 let phone = document.getElementById("phone").value.trim()
 let address = document.getElementById("address").value.trim()
+
+let payment = document.querySelector('input[name="payment"]:checked').value
 
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 
@@ -163,7 +180,6 @@ let message = document.getElementById("order-message")
 if(name === "" || phone === "" || address === ""){
 message.textContent = "Ве молиме пополнете ги сите полиња."
 message.classList.remove("hidden")
-message.classList.remove("text-gray-800")
 message.classList.add("text-gray-600")
 return
 }
@@ -186,24 +202,46 @@ body: JSON.stringify({
 name: name,
 phone: phone,
 address: address,
+payment: payment,
 products: products,
 total: total
 })
 })
-.then(res => res.json())
-.then(data => {
+
+/* PAYMENT LOGIC */
+
+if(payment === "card"){
+
+message.textContent = "Пренасочување кон плаќање..."
+message.classList.remove("hidden")
+message.classList.remove("text-gray-600")
+message.classList.add("text-gray-600")
+
+setTimeout(()=>{
+window.location.href = "https://your-stopanska-payment-link"
+},1500)
+
+}
+else{
 
 message.textContent = "Нарачката е успешно испратена. Ќе ве контактираме наскоро."
 message.classList.remove("hidden")
-message.classList.remove("text-red-600")
-message.classList.add("text-gray-800")
+message.classList.remove("text-gray-600")
+message.classList.add("text-gray-600")
+
+/* CLEAR CART */
 
 localStorage.removeItem("cart")
 
-})
+/* UPDATE PAGE */
+
+document.getElementById("cart-items").innerHTML = ""
+document.getElementById("cart-total").innerText = "0"
+document.getElementById("cart-count").innerText = "0"
 
 }
 
+}
 </script>
 </body>
 </html>
