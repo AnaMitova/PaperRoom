@@ -12,7 +12,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<a href="#top"
+   id="backToTop"
+   class="fixed bottom-6 right-6 z-[9999]
+          w-12 h-12 flex justify-center items-center
+          bg-white text-[#ba7f9c] rounded-full
+          shadow-[0_0_8px_rgba(0,0,0,0.25)]
+          hover:scale-110
+          transition-all duration-300
+          opacity-0 pointer-events-none">
+  <i class="fa-solid fa-arrow-up text-xl"></i>
+</a>
+<script>
+  const backToTop = document.getElementById("backToTop");
 
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.remove("opacity-0", "pointer-events-none");
+      backToTop.classList.add("opacity-100");
+    } else {
+      backToTop.classList.add("opacity-0", "pointer-events-none");
+      backToTop.classList.remove("opacity-100");
+    }
+  });
+</script>
 <body class="font-garet bg-[#f2f3f1]">
 
 <!-- NAVBAR -->
@@ -133,49 +156,148 @@ style="background-image:url('./img/1D207EB4-5E10-4659-8164-B0E84DFD7BC7_1_201_a.
 </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="bg-white py-20">
 
-<div class="max-w-7xl mx-auto px-6">
+
+<!-- ABOUT -->
+<section class="py-20 bg-[#f7f7f6]">
+<div class="px-6 flex md:flex-row flex-col-reverse justify-center items-center md:space-x-9">
+
+<img src="./img/IMG_1733.jpg" class="md:w-[36%] w-[76%] rounded-xl shadow-lg md:mt-0 mt-6">
+
+<div class="md:w-[40%]">
+<h2 class="text-3xl font-semibold md:text-start text-center text-[#aeb4a9] mb-4">Нашата приказна</h2>
+<p class="text-gray-700 mb-4">
+Paper Room е креативно студио за печатење и дизајн кое создава уникатни хартиени производи.
+Нашата цел е секој важен момент да го претвориме во нешто посебно.
+</p>
+
+<p class="text-gray-700">
+Од свадбени покани до креативни картички и хартија за пакување — секој дизајн е создаден со внимание и љубов кон деталите.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- WHY US -->
+<section class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-6">
 
 <div class="text-center mb-14">
-<p  class="text-3xl text-gray-800 font-semibold">ИЗБРАНИ ДИЗАЈНИ</p>
+<h2 class="text-3xl font-semibold text-[#c793ab]">Зошто Paper Room?</h2>
 </div>
 
-<div class="grid md:grid-cols-3 gap-8">
+<div class="grid md:grid-cols-3 gap-10 text-center">
 
-<div class="rounded-xl overflow-hidden shadow">
-<img src="./img/IMG_1765.jpg" class="h-72 w-full ">
-<div class="p-4">
-<h4 class="text-center text-blue-800">Покани со сини детали</h4>
-</div>
-</div>
-
-<div class="rounded-xl overflow-hidden shadow">
-<img src="./img/IMG_1771.jpg" class="h-72 w-full object-cover">
-<div class="p-4">
-<h4 class=" text-center text-red-800">Покани со црвен восок</h4>
-</div>
+<div>
+<i class="fa-solid fa-palette text-4xl text-[#c793ab] mb-4"></i>
+<h3 class="font-semibold text-lg mb-2">Уникатен дизајн</h3>
+<p class="text-gray-600">Секој производ е внимателно дизајниран за да биде различен.</p>
 </div>
 
-<div class="rounded-xl overflow-hidden shadow">
-<img src="./img/IMG_1769.jpg" class="h-72 w-full object-cover">
-<div class="p-4">
-<h4 class=" text-center text-green-900">Зелени магични покани</h4>
+<div>
+<i class="fa-solid fa-heart text-4xl text-[#c793ab] mb-4"></i>
+<h3 class="font-semibold text-lg mb-2">Персонализација</h3>
+<p class="text-gray-600">Дизајните се прилагодуваат според вашите желби.</p>
 </div>
+
+<div>
+<i class="fa-solid fa-print text-4xl text-[#c793ab] mb-4"></i>
+<h3 class="font-semibold text-lg mb-2">Квалитетно печатење</h3>
+<p class="text-gray-600">Користиме висококвалитетна хартија и печат.</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 text-center py-6">
-<p>© 2026 PaperRoom. Сите права се задржани.</p>
+<!-- TESTIMONIALS -->
+<section class="py-20 bg-[#f7f7f6]">
+<div class="max-w-6xl mx-auto px-6">
+
+<div class="text-center mb-14">
+<h2 class="text-3xl font-semibold text-[#b38d97]">Што велат клиентите</h2>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="bg-white p-6 rounded-xl shadow">
+<p class="text-gray-700 mb-4">
+„Поканите за нашата свадба беа прекрасни! Дизајнот беше точно како што замислувавме.“
+</p>
+<p class="font-semibold text-[#b38d97]">— Марија</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow">
+<p class="text-gray-700 mb-4">
+„Квалитетот на хартијата и печатењето е одличен. Сигурно повторно ќе нарачаме.“
+</p>
+<p class="font-semibold text-[#b38d97]">— Александар</p>
+</div>
+
+<div class="bg-white p-6 rounded-xl shadow">
+<p class="text-gray-700 mb-4">
+„Персонализираните картички беа совршени за нашата прослава.“
+</p>
+<p class="font-semibold text-[#b38d97]">— Елена</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-[#c793ab] text-center text-white">
+<div class="max-w-3xl mx-auto px-6">
+
+<h2 class="text-3xl font-semibold mb-4">
+Подготвени сте за вашиот уникатен дизајн?
+</h2>
+
+<p class="mb-8">
+Контактирајте нè и создадете персонализирани покани за вашиот настан.
+</p>
+
+<a href="https://www.instagram.com/paper.room.sk/?hl=en"
+class="bg-white text-[#9c6d83] px-8 py-3 rounded-lg font-semibold hover:scale-105 transition">
+Контакт
+</a>
+
+</div>
+</section>
+
+<footer class="bg-[#2b3138] text-gray-400 py-10">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+<div>
+<h3 class="text-white text-lg mb-3">Paper Room</h3>
+<p>Печатница и дизајн студио за уникатни хартиени производи.</p>
+</div>
+
+<div>
+<h3 class="text-white text-lg mb-3">Мени</h3>
+<ul class="space-y-2">
+<li><a href="index.html" class="hover:text-white">Дома</a></li>
+<li><a href="wrapping.html" class="hover:text-white">Хартии</a></li>
+<li><a href="invitations.html" class="hover:text-white">Покани</a></li>
+<li><a href="contact.html" class="hover:text-white">Контакт</a></li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-white text-lg mb-3">Следете не</h3>
+<div class="flex justify-center md:justify-start space-x-4 text-2xl">
+<i class="fa-brands fa-instagram hover:text-white"></i>
+<i class="fa-brands fa-facebook hover:text-white"></i>
+</div>
+</div>
+
+</div>
+
+<p class="text-center text-sm mt-8">
+© 2026 PaperRoom. Сите права се задржани.
+</p>
 </footer>
-
-
 
 <script>
 const menuBtn = document.getElementById("menu-btn");

@@ -13,7 +13,30 @@
 <script src="cart.js"></script>
 
 </head>
+<a href="#top"
+   id="backToTop"
+   class="fixed bottom-6 right-6 z-[9999]
+          w-12 h-12 flex justify-center items-center
+          bg-white text-[#ba7f9c] rounded-full
+          shadow-[0_0_8px_rgba(0,0,0,0.25)]
+          hover:scale-110
+          transition-all duration-300
+          opacity-0 pointer-events-none">
+  <i class="fa-solid fa-arrow-up text-xl"></i>
+</a>
+<script>
+  const backToTop = document.getElementById("backToTop");
 
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.remove("opacity-0", "pointer-events-none");
+      backToTop.classList.add("opacity-100");
+    } else {
+      backToTop.classList.add("opacity-0", "pointer-events-none");
+      backToTop.classList.remove("opacity-100");
+    }
+  });
+</script>
 <body class="bg-gray-50">
 
 <!-- NAVBAR -->
@@ -68,7 +91,7 @@ transform -translate-y-full transition-transform duration-500 ease-in-out">
 <!-- INVITATIONS SECTION -->
 <section class="max-w-7xl mx-auto px-6 py-16 text-center">
 
-<p  class="text-3xl font-semibold text-gray-800 mb-4">
+<p  class="text-3xl font-semibold text-[#424b54] mb-4">
 Покани и картички
 </p>
 
@@ -90,13 +113,13 @@ Instagram
 <!-- GALLERY -->
 <section class="max-w-7xl mx-auto  pb-20">
 
-<h3 class="md:text-2xl text-xl text-center text-gray-800 px-3 md:px-0 mb-10">
+<h3 class="md:text-2xl text-xl text-center text-[#424b54] px-3 md:px-0 mb-10">
 Галерија од наши изработени покани
 </h3>
 
 <div class="flex flex-wrap justify-center px-5 md:px-0 gap-6">
 
-<img src="./img/IMG_1758.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1758.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1772.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1767.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1766.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
@@ -110,12 +133,11 @@ Instagram
 <img src="./img/IMG_1152.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1153.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1154.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
-<img src="./img/IMG_1757.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
-<img src="./img/IMG_1756.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
-<img src="./img/IMG_1769.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
-<img src="./img/IMG_1770.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1757.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1756.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1769.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1770.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1771.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
-<img src="./img/IMG_1765.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1764.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1762.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
 <img src="./img/IMG_1761.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
