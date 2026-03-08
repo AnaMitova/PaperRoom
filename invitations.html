@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wrapping Paper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./output.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e70ea989f6.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="cart.js"></script>
+
+</head>
+
+<body class="bg-gray-50">
+
+<!-- NAVBAR -->
+<header class="shadow font-garet bg-[#f2f3f1]">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+<div class="flex items-center ">
+<img class="w-20 h-20 rounded-full" src="./img/paper-room-stikerce.jpeg"/>
+<div>
+    <h1 class="text-[20px] text-[#3b3b3b] font-font">PAPER ROOM</h1>
+    <h1 class="text-[10px] text-[#3b3b3b] font-garet">Печатница и дизајн студио</h1>
+</div>
+</div>
+
+
+<!-- Hamburger -->
+<button id="menu-btn" class="text-2xl md:hidden pr-6 text-gray-600">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- Desktop Menu -->
+<nav class="space-x-9 text-[17px] hidden md:block">
+<a href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a class="font-semibold text-[#c793ab]" href="invitations.html">Покани и картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html" class="text-[#c793ab] ">
+Кошничка (<span id="cart-count">0</span>)
+</a>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu"
+class="fixed inset-0 bg-[#ba7f9c] text-white flex flex-col p-12 text-3xl space-y-8 z-50
+transform -translate-y-full transition-transform duration-500 ease-in-out">
+
+<button id="close-menu" class="absolute top-6 right-6 text-2xl">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+<a href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани и картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html">Кошничка</a>
+
+</div>
+
+
+</div>
+</header>
+<!-- INVITATIONS SECTION -->
+<section class="max-w-7xl mx-auto px-6 py-16 text-center">
+
+<p  class="text-3xl font-semibold text-gray-800 mb-4">
+Покани и картички
+</p>
+
+<p class="text-gray-600 text-[13px] max-w-2xl mx-auto mb-6">
+Сите покани и картички ги изработуваме по нарачка.  
+За уникатен дизајн пишете ни порака на Instagram и ќе ви помогнеме да ја креирате совршената покана.
+</p>
+
+<a href="https://www.instagram.com/paper.room.sk/?hl=en" target="_blank"
+class="inline-flex items-center gap-2 bg-[#c793ab] text-white px-6 py-3 rounded-full hover:bg-[#b07a92] transition">
+
+<i class="fa-brands fa-instagram"></i>
+Instagram
+</a>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="max-w-7xl mx-auto  pb-20">
+
+<h3 class="md:text-2xl text-xl text-center text-gray-800 px-3 md:px-0 mb-10">
+Галерија од наши изработени покани
+</h3>
+
+<div class="flex flex-wrap justify-center px-5 md:px-0 gap-6">
+
+<img src="./img/IMG_1758.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1772.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1767.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1766.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1145.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1146.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1147.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1148.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1149.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1150.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1151.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1152.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1153.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1154.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1757.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1756.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1769.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1770.JPG" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1771.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1765.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1764.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1762.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+<img src="./img/IMG_1761.jpg" class="rounded-xl w-[390px] h-[500px] shadow hover:scale-105 transition duration-300">
+
+</div>
+
+</section>
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-menu");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuBtn.addEventListener("click", () => {
+mobileMenu.classList.remove("-translate-y-full");
+mobileMenu.classList.add("translate-y-0");
+});
+
+closeBtn.addEventListener("click", () => {
+mobileMenu.classList.remove("translate-y-0");
+mobileMenu.classList.add("-translate-y-full");
+});
+
+</script>
+</body>
+</html>
