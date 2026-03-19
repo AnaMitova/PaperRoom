@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Контакт - Paper Room</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./output.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://kit.fontawesome.com/e70ea989f6.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-50 pt-28">
+
+<header id="navbar" class="shadow bg-[#f2f3f1] fixed top-0 left-0 w-full z-50 transition-transform duration-300">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+<!-- LOGO -->
+<a href="./index.html" class="flex items-center">
+<img class="w-20 h-20 rounded-full" src="./img/paper-room-stikerce.jpeg"/>
+<div>
+    <h1 class="text-[20px] text-[#3b3b3b] font-font">PAPER ROOM</h1>
+    <h1 class="text-[10px] text-[#3b3b3b] font-garet">Печатница и дизајн студио</h1>
+</div>
+</a>
+
+<!-- Hamburger -->
+<button id="menu-btn" class="text-2xl md:hidden pr-6 text-gray-600">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- Desktop Menu -->
+<nav class="space-x-9 text-[17px] hidden md:block">
+<a href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани и картички</a>
+<a class="font-semibold text-[#c793ab]" href="contact.html">Контакт</a>
+<a href="cart.html" class="text-[#c793ab]">
+Кошничка (<span id="cart-count">0</span>)
+</a>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu"
+class="hidden fixed inset-0 bg-[#ba7f9c] md:hidden text-white flex flex-col p-12 text-3xl space-y-8 z-50
+transform -translate-y-full transition-transform duration-500 ease-in-out">
+
+<button id="close-menu" class="absolute top-6 right-6 text-2xl">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+<a href="index.html">Дома</a>
+<a href="wrapping.html">Хартии</a>
+<a href="invitations.html">Покани и картички</a>
+<a href="contact.html">Контакт</a>
+<a href="cart.html">Кошничка</a>
+
+</div>
+
+</div>
+</header>
+<script>
+// NAVBAR HIDE ON SCROLL
+let lastScroll = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+let currentScroll = window.pageYOffset;
+
+if (currentScroll > lastScroll && currentScroll > 100) {
+navbar.classList.add("-translate-y-full");
+} else {
+navbar.classList.remove("-translate-y-full");
+}
+
+lastScroll = currentScroll;
+});
+</script>
+
+<script>
+// MOBILE MENU
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-menu");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("hidden");
+  setTimeout(() => {
+    mobileMenu.classList.remove("-translate-y-full");
+    mobileMenu.classList.add("translate-y-0");
+  }, 10);
+});
+
+closeBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-y-0");
+  mobileMenu.classList.add("-translate-y-full");
+
+  setTimeout(() => {
+    mobileMenu.classList.add("hidden");
+  }, 500);
+});
+</script>
+
+<!-- CONTACT SECTION -->
+<section class="max-w-7xl mx-auto px-6 py-16 " >
+
+<h2 class="text-3xl font-semibold text-[#424b54] text-center mb-10">
+Контактирајте нѐ
+</h2>
+
+<div class="grid md:grid-cols-2 gap-12">
+
+<!-- LEFT INFO -->
+<div class=" space-y-6">
+
+<div>
+<h3 class="text-xl font-semibold text-[#424b54] mb-2">Локација</h3>
+<p class="text-gray-600">
+Paper Room<br>
+Anri Barbis 36<br>
+1000 Skopje, Macedonia
+</p>
+</div>
+
+<div>
+<h3 class="text-xl font-semibold text-[#424b54] mb-2">Телефон</h3>
+<p class="text-gray-600">
++389 70 387 697
+</p>
+</div>
+
+<div>
+<h3 class="text-xl font-semibold text-[#424b54] mb-2">Instagram</h3>
+<a href="https://www.instagram.com/paper.room.sk/?hl=en" target="_blank"
+class="inline-flex items-center gap-2 bg-[#c793ab] text-white px-5 py-2 rounded-full hover:bg-[#b07a92] transition">
+<i class="fa-brands fa-instagram"></i>
+@paper.room.sk
+</a>
+</div>
+
+</div>
+
+<!-- CONTACT FORM -->
+<div class="bg-white p-8 rounded-xl shadow">
+
+<form class="space-y-5">
+
+<input type="text" placeholder="Вашето име"
+class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#c793ab]">
+
+<input type="email" placeholder="Вашиот email"
+class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#c793ab]">
+
+<textarea rows="5" placeholder="Вашата порака"
+class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#c793ab]"></textarea>
+
+<button type="submit"
+class="w-full bg-[#c793ab] text-white py-3 rounded-lg hover:bg-[#b07a92] transition">
+Испрати порака
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MAP -->
+<section class="max-w-7xl mx-auto px-6 pb-16">
+
+<h3 class="text-xl text-[#424b54] mb-6 text-center">
+Пронајдете не
+</h3>
+
+<div class="w-full h-[400px] rounded-xl overflow-hidden shadow">
+<iframe 
+class="w-full h-full border-0"
+src="https://maps.google.com/maps?q=Anri%20Barbis%2036%20Skopje&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#2b3138] text-gray-400 py-10">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+<div>
+<h3 class="text-white text-lg mb-3">Paper Room</h3>
+<p>Печатница и дизајн студио за уникатни хартиени производи.</p>
+</div>
+
+<div>
+<h3 class="text-white text-lg mb-3">Мени</h3>
+<ul class="space-y-2">
+<li><a href="index.html" class="hover:text-white">Дома</a></li>
+<li><a href="wrapping.html" class="hover:text-white">Хартии</a></li>
+<li><a href="invitations.html" class="hover:text-white">Покани</a></li>
+<li><a href="contact.html" class="hover:text-white">Контакт</a></li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-white text-lg mb-3">Следете не</h3>
+<div class="flex justify-center md:justify-start space-x-4 text-2xl">
+<i class="fa-brands fa-instagram hover:text-white"></i>
+<i class="fa-brands fa-facebook hover:text-white"></i>
+</div>
+</div>
+
+</div>
+
+<p class="text-center text-sm mt-8">
+© 2026 PaperRoom. Сите права се задржани.
+</p>
+</footer>
+
+</body>
+</html>

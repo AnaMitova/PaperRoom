@@ -82,18 +82,43 @@ loadProducts()
     }
   });
 </script>
-<body class="">
+<body class="bg-gray-50 pt-28">
 <!-- NAVBAR -->
-<header class=" shadow font-garet bg-[#f2f3f1]">
+<header id="navbar" class="shadow font-garet bg-[#f2f3f1] fixed top-0 left-0 w-full z-50 transition-transform duration-300">
 <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
-<div class="flex items-center ">
+<a href="./index.html"><div class="flex items-center ">
 <img class="w-20 h-20 rounded-full" src="./img/paper-room-stikerce.jpeg"/>
 <div>
     <h1 class="text-[20px] text-[#3b3b3b] font-font">PAPER ROOM</h1>
     <h1 class="text-[10px] text-[#3b3b3b] font-garet">Печатница и дизајн студио</h1>
 </div>
-</div>
+</div></a>
+<script>
+
+let lastScroll = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+let currentScroll = window.pageYOffset;
+
+if (currentScroll > lastScroll && currentScroll > 100) {
+
+navbar.classList.add("-translate-y-full");
+
+} else {
+
+navbar.classList.remove("-translate-y-full");
+
+}
+
+lastScroll = currentScroll;
+
+});
+
+</script>
+
 
 <!-- Hamburger -->
 <button id="menu-btn" class="text-2xl md:hidden pr-6 text-gray-600">
@@ -102,7 +127,7 @@ loadProducts()
 
 <!-- Desktop Menu -->
 <nav class="space-x-9 text-[17px] hidden md:block">
-<a href="index.html">Дома</a>
+<a  href="index.html">Дома</a>
 <a class="font-semibold text-[#c793ab]" href="wrapping.html">Хартии</a>
 <a href="invitations.html">Покани и картички</a>
 <a href="contact.html">Контакт</a>
@@ -113,7 +138,7 @@ loadProducts()
 
 <!-- Mobile Menu -->
 <div id="mobile-menu"
-class="fixed inset-0 bg-[#ba7f9c] text-white flex flex-col p-12 text-3xl space-y-8 z-50
+class="hidden fixed inset-0 bg-[#ba7f9c] md:hidden text-white flex flex-col p-12 text-3xl space-y-8 z-50
 transform -translate-y-full transition-transform duration-500 ease-in-out">
 
 <button id="close-menu" class="absolute top-6 right-6 text-2xl">
@@ -127,7 +152,6 @@ transform -translate-y-full transition-transform duration-500 ease-in-out">
 <a href="cart.html">Кошничка</a>
 
 </div>
-
 
 
 </div>
@@ -216,15 +240,53 @@ const closeBtn = document.getElementById("close-menu");
 const mobileMenu = document.getElementById("mobile-menu");
 
 menuBtn.addEventListener("click", () => {
-mobileMenu.classList.remove("-translate-y-full");
-mobileMenu.classList.add("translate-y-0");
+  mobileMenu.classList.remove("hidden");
+  setTimeout(() => {
+    mobileMenu.classList.remove("-translate-y-full");
+    mobileMenu.classList.add("translate-y-0");
+  }, 10);
 });
 
 closeBtn.addEventListener("click", () => {
-mobileMenu.classList.remove("translate-y-0");
-mobileMenu.classList.add("-translate-y-full");
-});
+  mobileMenu.classList.remove("translate-y-0");
+  mobileMenu.classList.add("-translate-y-full");
 
+  setTimeout(() => {
+    mobileMenu.classList.add("hidden");
+  }, 500);
+});
 </script>
+<footer class="bg-[#2b3138] text-gray-400 py-10">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center md:text-left">
+
+<div>
+<h3 class="text-white text-lg mb-3">Paper Room</h3>
+<p>Печатница и дизајн студио за уникатни хартиени производи.</p>
+</div>
+
+<div>
+<h3 class="text-white text-lg mb-3">Мени</h3>
+<ul class="space-y-2">
+<li><a href="index.html" class="hover:text-white">Дома</a></li>
+<li><a href="wrapping.html" class="hover:text-white">Хартии</a></li>
+<li><a href="invitations.html" class="hover:text-white">Покани</a></li>
+<li><a href="contact.html" class="hover:text-white">Контакт</a></li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-white text-lg mb-3">Следете не</h3>
+<div class="flex justify-center md:justify-start space-x-4 text-2xl">
+<i class="fa-brands fa-instagram hover:text-white"></i>
+<i class="fa-brands fa-facebook hover:text-white"></i>
+</div>
+</div>
+
+</div>
+
+<p class="text-center text-sm mt-8">
+© 2026 PaperRoom. Сите права се задржани.
+</p>
+</footer>
 </body>
 </html>
